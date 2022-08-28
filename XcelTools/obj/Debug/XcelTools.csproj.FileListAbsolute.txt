@@ -1,0 +1,15 @@
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.dll
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.pdb
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.dll.manifest
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.vsto
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.Xplore.exe
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.Xplore.pdb
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\bin\Debug\XcelTools.Xplore.exe.config
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.AssemblyReference.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.Properties.Resources.resources
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.GenerateResource.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.CoreCompileInputs.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.CopyComplete
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.dll
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.pdb

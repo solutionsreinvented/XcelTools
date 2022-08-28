@@ -1,0 +1,17 @@
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\bin\Debug\XcelTools.Xplore.exe.config
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\bin\Debug\XcelTools.Xplore.exe
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\bin\Debug\XcelTools.Xplore.pdb
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.csproj.AssemblyReference.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\MainWindow.g.cs
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\App.g.cs
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore_MarkupCompile.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore_MarkupCompile.lref
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\MainWindow.baml
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.g.resources
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.Properties.Resources.resources
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.csproj.GenerateResource.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.csproj.CoreCompileInputs.cache
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.exe
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.pdb
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\Views\XploreWindow.g.cs
+C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\Views\XploreWindow.baml
