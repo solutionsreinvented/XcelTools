@@ -27,10 +27,11 @@
     <RootNamespace>XcelTools</RootNamespace>
     <AssemblyName>XcelTools</AssemblyName>
     <LoadBehavior>3</LoadBehavior>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
@@ -172,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,6 +182,7 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -197,6 +200,10 @@
     <ProjectReference Include="..\XcelTools.Xplore\XcelTools.Xplore.csproj">
       <Project>{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}</Project>
       <Name>XcelTools.Xplore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XcelTools.Xtractor\XcelTools.Xtractor.csproj">
+      <Project>{7259CCE6-6901-4A76-87FF-44EDA299267D}</Project>
+      <Name>XcelTools.Xtractor</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

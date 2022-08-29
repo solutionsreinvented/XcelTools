@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\
+C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\
 XcelTools.Xplore
 none
 false
 DEBUG;TRACE
-C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\App.xaml
+C:\Source\XcelTools\XcelTools.Xplore\App.xaml
 21726211146
 
-111629105980
-13152784993
+111541316397
+13-1505183044
 MainWindow.xaml;Views\XploreWindow.xaml;
 
-True
+False
 

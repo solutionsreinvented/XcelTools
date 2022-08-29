@@ -1,0 +1,11 @@
+C:\Source\XcelTools\XcelTools.Xtractor\bin\Debug\XcelTools.Xtractor.dll
+C:\Source\XcelTools\XcelTools.Xtractor\bin\Debug\XcelTools.Xtractor.pdb
+C:\Source\XcelTools\XcelTools.Xtractor\bin\Debug\ReInvented.DataAccess.dll
+C:\Source\XcelTools\XcelTools.Xtractor\bin\Debug\Newtonsoft.Json.dll
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.csproj.AssemblyReference.cache
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.Properties.Resources.resources
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.csproj.GenerateResource.cache
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.csproj.CoreCompileInputs.cache
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.csproj.CopyComplete
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.dll
+C:\Source\XcelTools\XcelTools.Xtractor\obj\Debug\XcelTools.Xtractor.pdb
