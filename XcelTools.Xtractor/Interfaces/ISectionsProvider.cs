@@ -24,5 +24,8 @@ namespace XcelTools.Xtractor.Interfaces
 
         [ComVisible(true)]
         Table<T> GetTable<T>(Database<T> database, string tableName) where T : Section, new();
+
+        [ComVisible(true)]
+        object GetDatabaseOfT(string typeName, string fileName);
     }
 }

@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using ReInvented.DataAccess.Factories;
 
 namespace XcelTools.Xtractor.Services
 {
@@ -69,7 +70,7 @@ namespace XcelTools.Xtractor.Services
 
             IDataSerializer<Catalogue> serializer = new JsonDataSerializer<Catalogue>();
 
-            return serializer.Deserialiaze(fileFullPath);
+            return serializer.Deserialize(fileFullPath);
         }
 
         [ComVisible(true)]
@@ -79,7 +80,7 @@ namespace XcelTools.Xtractor.Services
 
             IDataSerializer<Database<T>> databaseSerializer = new JsonDataSerializer<Database<T>>();
 
-            return databaseSerializer.Deserialiaze(fileFullPath);
+            return databaseSerializer.Deserialize(fileFullPath);
         }
 
         [ComVisible(true)]
@@ -89,6 +90,26 @@ namespace XcelTools.Xtractor.Services
         }
 
         #endregion
+
+        [ComVisible(true)]
+        public object GetDatabaseOfT(string typeName, string fileName)
+        {
+            string fileFullPath = Path.Combine(ServiceProvider.JsonSectionsDirectory, fileName);
+
+            string[] methodParameters = new string[] { fileFullPath };
+
+            Type typeObject = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name == typeName);
+
+            Type database = typeof(Database<>).MakeGenericType(typeObject);
+
+            object serializer = SerializerFactory.GetSerializerOfType(database);
+
+            MethodInfo methodToInvoke = serializer.GetType().GetMethods().FirstOrDefault(m => m.Name == "Deserialize");
+
+            object deserialized = methodToInvoke.Invoke(serializer, methodParameters);
+
+            return deserialized;
+        }
 
         #region Private Helpers
 
