@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace XcelTools.Xplore.Interfaces
+namespace XcelTools.XpLore.Interfaces
 {
     [ComVisible(true)]
     public interface IMaterialsProvider

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace XcelTools.Xplore.Services
+namespace XcelTools.XpLore.Services
 {
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]

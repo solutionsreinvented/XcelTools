@@ -71,6 +71,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Release" configuration is selected.
@@ -103,6 +104,17 @@
     <Reference Include="Accessibility" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ReInvented.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="ReInvented.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ReInvented.StaadPro.Interop">
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.StaadPro.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -165,6 +177,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VBCode\VbaBackup.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -175,6 +188,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -194,17 +208,30 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="XcelTools_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XcelTools.Licensing\XcelTools.Licensing.csproj">
+      <Project>{5885fbcd-e7f9-4690-9188-e5f2c50907ed}</Project>
+      <Name>XcelTools.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XcelTools.Staad.Interop\XcelTools.Staad.Interop.csproj">
+      <Project>{c153d22e-d080-4180-b593-f1565c13f1c2}</Project>
+      <Name>XcelTools.Staad.Interop</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
     <ProjectReference Include="..\XcelTools.Xplore\XcelTools.Xplore.csproj">
-      <Project>{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}</Project>
+      <Project>{53e52ed2-d221-4a60-8be9-b7a6a651c8f1}</Project>
       <Name>XcelTools.Xplore</Name>
     </ProjectReference>
     <ProjectReference Include="..\XcelTools.Xtractor\XcelTools.Xtractor.csproj">
-      <Project>{7259CCE6-6901-4A76-87FF-44EDA299267D}</Project>
+      <Project>{7259cce6-6901-4a76-87ff-44eda299267d}</Project>
       <Name>XcelTools.Xtractor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMFileReference Include="C:\Program Files\Bentley\Engineering\STAAD.Pro 2023\STAAD\StaadPro.dll">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMFileReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -218,6 +245,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A2A2329685A05BA6D3D39F7C74D8E3A105288F50</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

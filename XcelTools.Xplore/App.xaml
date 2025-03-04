@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="XcelTools.Xplore.App"
+    x:Class="XcelTools.XpLore.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:XcelTools.Xplore"
+    xmlns:local="clr-namespace:XcelTools.XpLore"
     StartupUri="MainWindow.xaml">
     <Application.Resources />
 </Application>

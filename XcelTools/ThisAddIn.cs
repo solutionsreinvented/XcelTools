@@ -1,6 +1,9 @@
 ﻿using System;
 using XcelTools.Models;
-using XcelTools.Xplore.Views;
+
+using XcelTools.XpLore.Views;
+using XcelTools.Xtractor.Models.Sections;
+using XcelTools.Xtractor.Services;
 
 namespace XcelTools
 {
@@ -10,9 +13,9 @@ namespace XcelTools
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
-            XploreWindow xploreWindow = new XploreWindow();
+            //XploreWindow xploreWindow = new XploreWindow();
 
-            xploreWindow.Show();
+            //xploreWindow.Show();
         }
 
         private void ThisAddIn_Shutdown(object sender, EventArgs e)

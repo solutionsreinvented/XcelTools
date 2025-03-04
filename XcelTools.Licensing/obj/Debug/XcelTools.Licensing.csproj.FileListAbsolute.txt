@@ -1,0 +1,10 @@
+C:\Source\XcelTools\XcelTools.Licensing\bin\Debug\XcelTools.Licensing.dll
+C:\Source\XcelTools\XcelTools.Licensing\bin\Debug\XcelTools.Licensing.pdb
+C:\Source\XcelTools\XcelTools.Licensing\bin\Debug\Newtonsoft.Json.dll
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.csproj.AssemblyReference.cache
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.Properties.Resources.resources
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.csproj.GenerateResource.cache
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.csproj.CoreCompileInputs.cache
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.csproj.CopyComplete
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.dll
+C:\Source\XcelTools\XcelTools.Licensing\obj\Debug\XcelTools.Licensing.pdb

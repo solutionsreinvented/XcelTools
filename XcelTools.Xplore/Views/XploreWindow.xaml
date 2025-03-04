@@ -1,5 +1,5 @@
 ﻿<Window
-    x:Class="XcelTools.Xplore.Views.XploreWindow"
+    x:Class="XcelTools.XpLore.Views.XploreWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,6 +9,7 @@
     Height="400"
     AllowsTransparency="True"
     Background="Transparent"
+    MouseDown="OnMouseDown"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -34,7 +35,7 @@
 
             <Border
                 Grid.RowSpan="2"
-                Background="#2B4865"
+                Background="#FF403E42"
                 BorderBrush="#1A3553"
                 BorderThickness="0.5"
                 CornerRadius="1" />
@@ -46,9 +47,8 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="14"
-                FontWeight="Bold"
                 Foreground="#B1D7B4"
-                Text="Xplore" />
+                Text="XpLore" />
 
         </Grid>
 

@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,8 +39,23 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="ReInvented.DataAccess">
       <HintPath>E:\SolutionsReInvented\BranchReorganization\ApplicationData\Libraries\ReInvented.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="ReInvented.Sections.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Sections.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ReInvented.Sections.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Sections.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="ReInvented.StaadPro.Interop">
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.StaadPro.Interop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -57,13 +73,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\MaterialsProvider.cs" />
-    <Compile Include="Services\SectionsProvider.cs" />
+    <Compile Include="Interfaces\IClassificationInfo.cs" />
+    <Compile Include="Interfaces\IDatabaseInfo.cs" />
+    <Compile Include="Interfaces\IShapeInfo.cs" />
+    <Compile Include="Services\ExcelCommonServices.cs" />
+    <Compile Include="Interfaces\ISecurityService.cs" />
+    <Compile Include="Services\MaterialsService.cs" />
+    <Compile Include="Services\SectionsService.cs" />
+    <Compile Include="Services\SecurityService.cs" />
     <Compile Include="Services\ServiceProvider.cs" />
     <Compile Include="Enums\FileExtension.cs" />
     <Compile Include="Enums\Shape.cs" />
     <Compile Include="Interfaces\IMaterialsProvider.cs" />
-    <Compile Include="Interfaces\ISectionsProvider.cs" />
+    <Compile Include="Interfaces\ISectionsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Materials\Catalogue.cs" />
@@ -71,7 +93,7 @@
     <Compile Include="Models\Materials\Grade.cs" />
     <Compile Include="Models\Materials\Table.cs" />
     <Compile Include="Models\Sections\Catalogue.cs" />
-    <Compile Include="Models\Sections\Classification.cs" />
+    <Compile Include="Models\Sections\ClassificationInfo.cs" />
     <Compile Include="Models\Sections\Database.cs" />
     <Compile Include="Models\Sections\DatabaseInfo.cs" />
     <Compile Include="Models\Sections\DataFile.cs" />
@@ -98,6 +120,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

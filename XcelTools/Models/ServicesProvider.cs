@@ -1,5 +1,11 @@
-﻿using System.Runtime.InteropServices;
+﻿using ReInvented.DataAccess.Services;
+using ReInvented.StaadPro.Interop.Models;
+using ReInvented.StaadPro.Interop.Services;
+
+using System.Runtime.InteropServices;
 using XcelTools.Interfaces;
+using XcelTools.Staad.Interop.Interfaces;
+using XcelTools.Staad.Interop.Models;
 using XcelTools.Xtractor.Services;
 
 namespace XcelTools.Models
@@ -8,14 +14,21 @@ namespace XcelTools.Models
     [ClassInterface(ClassInterfaceType.None)]
     public class ServicesProvider : IServicesProvider
     {
-        public MaterialsProvider GetMaterialsProvider()
+        public MaterialsService GetMaterialsService()
         {
-            return MaterialsProvider.Instance();
+            return MaterialsService.Instance;
         }
 
-        public SectionsProvider GetSectionsProvider()
+        public SectionsService GetSectionsService()
         {
-            return SectionsProvider.Instance();
+            return SectionsService.Instance;
+        }
+
+        public IOpenStaadWrapperCom GetOpenStaadWrapper()
+        {
+            string filePath = FileServiceProvider.GetFilePathUsingOpenFileDialog(new ReInvented.DataAccess.Models.FileFilter("Staad Files", "std"));
+            OpenStaadWrapper wrapper = OpenStaadWrapperProvider.Get(filePath);
+            return new OpenStaadWrapperCom(wrapper);
         }
     }
 }

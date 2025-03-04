@@ -1,11 +1,11 @@
-﻿XcelTools.Xplore
+﻿XcelTools.XpLore
 
 
 winexe
 C#
 .cs
 C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\
-XcelTools.Xplore
+XcelTools.XpLore
 none
 false
 DEBUG;TRACE
@@ -16,5 +16,5 @@ C:\Source\XcelTools\XcelTools.Xplore\App.xaml
 13-1505183044
 MainWindow.xaml;Views\XploreWindow.xaml;
 
-False
+True
 

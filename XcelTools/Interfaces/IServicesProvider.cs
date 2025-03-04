@@ -1,15 +1,22 @@
-﻿using System.Runtime.InteropServices;
+﻿
+using System.Runtime.InteropServices;
+
+using XcelTools.Staad.Interop.Interfaces;
 using XcelTools.Xtractor.Services;
 
 namespace XcelTools.Interfaces
 {
     [ComVisible(true)]
+    [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IServicesProvider
     {
         [ComVisible(true)]
-        SectionsProvider GetSectionsProvider();
+        SectionsService GetSectionsService();
 
         [ComVisible(true)]
-        MaterialsProvider GetMaterialsProvider();
+        MaterialsService GetMaterialsService();
+
+        [ComVisible(true)]
+        IOpenStaadWrapperCom GetOpenStaadWrapper();
     }
 }

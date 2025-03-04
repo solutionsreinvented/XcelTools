@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-namespace XcelTools.Xplore.Services
+namespace XcelTools.XpLore.Services
 {
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
@@ -22,7 +22,7 @@ namespace XcelTools.Xplore.Services
 
         public void ShowGreeting()
         {
-            _ = MessageBox.Show("I have asked to greet you by XcelTools. Hello! Good morning");
+            _ = MessageBox.Show("I was asked to greet you by XcelTools. Hello! Good morning");
         }
 
         public List<int> GetIntCollection()

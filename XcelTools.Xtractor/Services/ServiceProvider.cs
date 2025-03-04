@@ -23,20 +23,17 @@ namespace XcelTools.Xtractor.Services
 
         public static string JsonMaterialsDirectory => Path.Combine(AppDataDirectory, @"Materails\Json");
 
-        public static string ThisPCMacAddress =>
-                                        NetworkInterface.GetAllNetworkInterfaces()
-                                       .Where(nic => nic.OperationalStatus == OperationalStatus.Up &&
-                                        nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-                                       .Select(nic => nic.GetPhysicalAddress().ToString())
-                                       .FirstOrDefault();
+        public static string ThisPCMacAddress => NetworkInterface.GetAllNetworkInterfaces()
+                                                                 .Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                                                                 .Select(nic => nic.GetPhysicalAddress().ToString())
+                                                                 .FirstOrDefault();
 
-        public static string GetDataFileFullPath(Shape sectionType,
-                                                 FileExtension fileExtension = FileExtension.Json)
+        public static string GetDataFileFullPath(Shape sectionType, FileExtension fileExtension = FileExtension.Json)
         {
             return Path.Combine(DatabasesDirectory, $"{sectionType}.{fileExtension.ToString().ToLower()}");
         }
 
-        public static string LicenseFileFullPath =>
-            Path.Combine(AppDataDirectory, $"license.{FileExtension.Xtrlic.ToString().ToLower()}");
+        public static string LicenseFileFullPath => Path.Combine(AppDataDirectory, $"license.{FileExtension.Xtrlic.ToString().ToLower()}");
     }
+
 }
