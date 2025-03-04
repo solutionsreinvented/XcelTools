@@ -28,9 +28,7 @@ C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.DataAccess.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Shared.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.StaadPro.Interop.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Licensing.dll
-C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Staad.Interop.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.XpLore.exe
-C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Xtractor.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\Newtonsoft.Json.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Licensing.Security.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\FluentValidation.dll
@@ -41,11 +39,8 @@ C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Sections.Core.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.UI.Themes.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Sections.Geometry.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Licensing.pdb
-C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Staad.Interop.pdb
-C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Staad.Interop.dll.config
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.XpLore.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.XpLore.exe.config
-C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.Xtractor.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.DataAccess.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Shared.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Shared.dll.config
@@ -68,3 +63,4 @@ C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Sections.Geometry.dll.config
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.CopyComplete
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.dll
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.pdb
+C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.tlb

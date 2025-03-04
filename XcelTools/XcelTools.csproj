@@ -108,6 +108,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="ReInvented.Sections.Domain">
+      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Sections.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="ReInvented.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Shared.dll</HintPath>
@@ -177,7 +180,39 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\ExcelCommonServices.cs" />
+    <Compile Include="Services\SecurityService.cs" />
+    <Compile Include="Staad\Interop\Interfaces\IOpenStaadWrapperCom.cs" />
+    <Compile Include="Staad\Interop\Interfaces\IOSGeometryCom.cs" />
+    <Compile Include="Staad\Interop\Models\OpenStaadWrapperCom.cs" />
+    <Compile Include="Staad\Interop\Models\OSGeometryCom.cs" />
     <Compile Include="VBCode\VbaBackup.cs" />
+    <Compile Include="Xtractor\Enums\FileExtension.cs" />
+    <Compile Include="Xtractor\Enums\Shape.cs" />
+    <Compile Include="Xtractor\Interfaces\IClassificationInfo.cs" />
+    <Compile Include="Xtractor\Interfaces\IDatabaseInfo.cs" />
+    <Compile Include="Xtractor\Interfaces\IMaterialsProvider.cs" />
+    <Compile Include="Xtractor\Interfaces\ISectionsService.cs" />
+    <Compile Include="Xtractor\Interfaces\ISecurityService.cs" />
+    <Compile Include="Xtractor\Interfaces\IShapeInfo.cs" />
+    <Compile Include="Xtractor\Models\Materials\Catalogue.cs" />
+    <Compile Include="Xtractor\Models\Materials\CommonProperties.cs" />
+    <Compile Include="Xtractor\Models\Materials\Grade.cs" />
+    <Compile Include="Xtractor\Models\Materials\Table.cs" />
+    <Compile Include="Xtractor\Models\Sections\Catalogue.cs" />
+    <Compile Include="Xtractor\Models\Sections\ClassificationInfo.cs" />
+    <Compile Include="Xtractor\Models\Sections\Database.cs" />
+    <Compile Include="Xtractor\Models\Sections\DatabaseInfo.cs" />
+    <Compile Include="Xtractor\Models\Sections\DataFile.cs" />
+    <Compile Include="Xtractor\Models\Sections\HCSection.cs" />
+    <Compile Include="Xtractor\Models\Sections\LSection.cs" />
+    <Compile Include="Xtractor\Models\Sections\OSection.cs" />
+    <Compile Include="Xtractor\Models\Sections\Section.cs" />
+    <Compile Include="Xtractor\Models\Sections\ShapeInfo.cs" />
+    <Compile Include="Xtractor\Models\Sections\Table.cs" />
+    <Compile Include="Xtractor\Services\MaterialsService.cs" />
+    <Compile Include="Xtractor\Services\SectionsService.cs" />
+    <Compile Include="Xtractor\Services\ServiceProvider.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -214,18 +249,9 @@
       <Project>{5885fbcd-e7f9-4690-9188-e5f2c50907ed}</Project>
       <Name>XcelTools.Licensing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XcelTools.Staad.Interop\XcelTools.Staad.Interop.csproj">
-      <Project>{c153d22e-d080-4180-b593-f1565c13f1c2}</Project>
-      <Name>XcelTools.Staad.Interop</Name>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </ProjectReference>
     <ProjectReference Include="..\XcelTools.Xplore\XcelTools.Xplore.csproj">
       <Project>{53e52ed2-d221-4a60-8be9-b7a6a651c8f1}</Project>
       <Name>XcelTools.Xplore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XcelTools.Xtractor\XcelTools.Xtractor.csproj">
-      <Project>{7259cce6-6901-4a76-87ff-44eda299267d}</Project>
-      <Name>XcelTools.Xtractor</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +259,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMFileReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
