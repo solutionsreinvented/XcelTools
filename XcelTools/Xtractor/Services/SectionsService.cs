@@ -62,7 +62,7 @@ namespace XcelTools.Xtractor.Services
                 SectionShape selectedShape = database.SectionShapes.FirstOrDefault(s => s.Shape == shape);
                 string listItems = string.Join(",", selectedShape.Classifications.Select(c => c.Category).ToArray());
                 ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
-                
+
                 int sRow = rngTarget.Row;
                 int sCol = rngTarget.Column;
                 worksheet.Cells[sRow, sCol].Value = selectedShape.Classifications.FirstOrDefault().Category;
@@ -78,12 +78,49 @@ namespace XcelTools.Xtractor.Services
             }
         }
 
+        //[ComVisible(true)]
+        //public void PopulateSectionProfiles(string dbName, string shape, string classification, Excel.Range rngTarget, Excel.Range rngPopulation)
+        //{
+        //    Excel.Worksheet worksheet = rngTarget.Worksheet;
+        //    string wsName = worksheet.Name;
+        //    _security.UnlockWorksheet(worksheet);
+        //    //xSec.DisableSecurity(wsName)
+
+        //    try
+        //    {
+        //        Database database = _library.Databases.FirstOrDefault(db => db.Name == dbName);
+        //        SectionShape selectedShape = database.SectionShapes.FirstOrDefault(s => s.Shape == shape);
+        //        Classification selectedClassification = selectedShape.Classifications.FirstOrDefault(c => c.Category == classification);
+
+        //        string listItems = string.Join(",", selectedClassification.Sections.Select(s => s.Designation).ToArray());
+        //        ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
+
+        //        int sRow = rngTarget.Row;
+        //        int sCol = rngTarget.Column;
+        //        worksheet.Cells[sRow, sCol].Value = selectedClassification.Sections.FirstOrDefault().Designation;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Types");
+        //    }
+        //    finally
+        //    {
+        //        _security.LockWorksheet(worksheet);
+        //        //xSec.EnableSecurity(wsName)
+        //    }
+        //}
+
         [ComVisible(true)]
         public void PopulateSectionProfiles(string dbName, string shape, string classification, Excel.Range rngTarget, Excel.Range rngPopulation)
         {
-            Excel.Worksheet worksheet = rngTarget.Worksheet;
-            string wsName = worksheet.Name;
-            _security.UnlockWorksheet(worksheet);
+            Excel.Worksheet wsTarget = rngTarget.Worksheet;
+            Excel.Worksheet wsPopulation = rngPopulation.Worksheet;
+
+            Excel.Application xlApp = wsTarget.Application;
+            Excel.Workbook workbook = rngTarget.Parent as Excel.Workbook;
+
+            string wsName = wsTarget.Name;
+            _security.UnlockWorksheet(wsTarget);
             //xSec.DisableSecurity(wsName)
 
             try
@@ -92,12 +129,23 @@ namespace XcelTools.Xtractor.Services
                 SectionShape selectedShape = database.SectionShapes.FirstOrDefault(s => s.Shape == shape);
                 Classification selectedClassification = selectedShape.Classifications.FirstOrDefault(c => c.Category == classification);
 
-                string listItems = string.Join(",", selectedClassification.Sections.Select(s => s.Designation).ToArray());
-                ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
+                string[] profiles = selectedClassification.Sections.Select(s => s.Designation).ToArray();
 
-                int sRow = rngTarget.Row;
-                int sCol = rngTarget.Column;
-                worksheet.Cells[sRow, sCol].Value = selectedClassification.Sections.FirstOrDefault().Designation;
+                rngPopulation.Font.Name = "Tahoma";
+                rngPopulation.Font.Size = 8;
+
+                var sRow = rngPopulation.Row;
+                var sCol = rngPopulation.Column;
+
+                for (int i = 0; i < profiles.Length; i++)
+                {
+                    wsPopulation.Cells[sRow + i, sCol].Value = profiles[i];
+                }
+
+                var listItems = "=" + wsPopulation.Name + "!" + wsPopulation.Range[wsPopulation.Cells[sRow, sCol], wsPopulation.Cells[profiles.Length, sCol]].Address;
+
+                ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
+                rngTarget.Value2 = profiles.FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -105,11 +153,10 @@ namespace XcelTools.Xtractor.Services
             }
             finally
             {
-                _security.LockWorksheet(worksheet);
+                _security.LockWorksheet(wsTarget);
                 //xSec.EnableSecurity(wsName)
             }
         }
-
 
         #region Public Functions
 

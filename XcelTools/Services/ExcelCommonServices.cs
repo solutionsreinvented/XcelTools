@@ -6,6 +6,8 @@ namespace XcelTools.Services
     {
         public static void PopulateListInACell(Excel.Range range, string listFormula)
         {
+            range.Select();
+
             Excel.Validation rngValidation = range.Validation;
 
             rngValidation.Delete();
