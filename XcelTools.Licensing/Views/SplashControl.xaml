@@ -169,8 +169,6 @@
                     IsEnabled="False"
                     Opacity="0.5" />
 
-
-
                 <TextBlock
                     Grid.Row="6"
                     Grid.Column="0"
@@ -246,6 +244,7 @@
                     Grid.ColumnSpan="2"
                     Width="200"
                     HorizontalAlignment="Center"
+                    Foreground="Orange"
                     IsIndeterminate="True" />
             </Grid>
         </Grid>
