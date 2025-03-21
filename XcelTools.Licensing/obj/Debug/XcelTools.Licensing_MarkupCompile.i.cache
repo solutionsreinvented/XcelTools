@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-1-276770142
+2-1996402108
 
-7-726963684
+8-1768390297
 14-1889873656
-Views\SplashControl.xaml;
+Controls\SplashControl.xaml;Views\SplashScreen.xaml;
 
-False
+True
 

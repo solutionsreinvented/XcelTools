@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace XcelTools.Licensing.Views
 {
     /// <summary>
-    /// Interaction logic for SplashControl.xaml
+    /// Interaction logic for SplashScreen.xaml
     /// </summary>
-    public partial class SplashControl : UserControl
+    public partial class SplashScreen : Window
     {
-        public SplashControl()
+        public SplashScreen()
         {
             InitializeComponent();
         }

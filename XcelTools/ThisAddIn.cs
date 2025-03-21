@@ -1,4 +1,6 @@
 ﻿using System;
+
+using XcelTools.Licensing.Views;
 using XcelTools.Models;
 
 using XcelTools.XpLore.Views;
@@ -13,6 +15,8 @@ namespace XcelTools
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
             //XploreWindow xploreWindow = new XploreWindow();
 
             //xploreWindow.Show();
