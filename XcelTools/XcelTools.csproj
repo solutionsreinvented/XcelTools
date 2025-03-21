@@ -208,6 +208,7 @@
     <Compile Include="Xtractor\Models\Sections\LSection.cs" />
     <Compile Include="Xtractor\Models\Sections\OSection.cs" />
     <Compile Include="Xtractor\Models\Sections\Section.cs" />
+    <Compile Include="Xtractor\Models\Sections\SectionProperties.cs" />
     <Compile Include="Xtractor\Models\Sections\ShapeInfo.cs" />
     <Compile Include="Xtractor\Models\Sections\Table.cs" />
     <Compile Include="Xtractor\Services\MaterialsService.cs" />

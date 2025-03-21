@@ -21,12 +21,12 @@ namespace XcelTools.Xtractor.Models.Sections
 
         public object GetSectionShapes()
         {
-            return SectionShapes as Object;
+            return SectionShapes;
         }
 
         public static IDatabaseInfo Transform(Database database)
         {
-            var dbInfo = new DatabaseInfo()
+            DatabaseInfo dbInfo = new DatabaseInfo()
             {
                 Country = database.Country,
                 Name = database.Name,

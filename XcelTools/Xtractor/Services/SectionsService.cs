@@ -3,11 +3,7 @@ using XcelTools.Xtractor.Interfaces;
 
 using XcelTools.Xtractor.Models.Sections;
 
-using ReInvented.DataAccess;
-using ReInvented.DataAccess.Interfaces;
-
 using System;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using ReInvented.Sections.Domain.Repositories;
@@ -16,6 +12,7 @@ using ReInvented.Sections.Domain.Models;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows;
 using XcelTools.Services;
+using ReInvented.Sections.Domain.Interfaces;
 
 namespace XcelTools.Xtractor.Services
 {
@@ -54,7 +51,6 @@ namespace XcelTools.Xtractor.Services
             Excel.Worksheet worksheet = rngTarget.Worksheet;
             string wsName = worksheet.Name;
             _security.UnlockWorksheet(worksheet);
-            //xSec.DisableSecurity(wsName)
 
             try
             {
@@ -74,7 +70,6 @@ namespace XcelTools.Xtractor.Services
             finally
             {
                 _security.LockWorksheet(worksheet);
-                //xSec.EnableSecurity(wsName)
             }
         }
 
@@ -84,7 +79,6 @@ namespace XcelTools.Xtractor.Services
         //    Excel.Worksheet worksheet = rngTarget.Worksheet;
         //    string wsName = worksheet.Name;
         //    _security.UnlockWorksheet(worksheet);
-        //    //xSec.DisableSecurity(wsName)
 
         //    try
         //    {
@@ -106,7 +100,6 @@ namespace XcelTools.Xtractor.Services
         //    finally
         //    {
         //        _security.LockWorksheet(worksheet);
-        //        //xSec.EnableSecurity(wsName)
         //    }
         //}
 
@@ -121,7 +114,6 @@ namespace XcelTools.Xtractor.Services
 
             string wsName = wsTarget.Name;
             _security.UnlockWorksheet(wsTarget);
-            //xSec.DisableSecurity(wsName)
 
             try
             {
@@ -149,12 +141,45 @@ namespace XcelTools.Xtractor.Services
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Types");
+                MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Profiles");
             }
             finally
             {
                 _security.LockWorksheet(wsTarget);
-                //xSec.EnableSecurity(wsName)
+            }
+        }
+
+        public void PopulateSectionData(string tableName, string sectionDesignation, Excel.Range rngTarget)
+        {
+            Excel.Worksheet wsCalcs = rngTarget.Worksheet;
+
+            try
+            {
+                _security.UnlockWorksheet(wsCalcs);
+                IRolledSectionHAndC section = _library.AllSections.FirstOrDefault(s => s.Designation == sectionDesignation) as IRolledSectionHAndC;
+
+                int sRow = rngTarget.Row;
+                int sCol = rngTarget.Column;
+                string wsCalcsName = rngTarget.Worksheet.Name;
+
+                wsCalcs.Cells[sRow, sCol].Value = section.H;
+                wsCalcs.Cells[sRow + 1, sCol].Value = section.Bf;
+                wsCalcs.Cells[sRow + 2, sCol].Value = section.Tf;
+                wsCalcs.Cells[sRow + 3, sCol].Value = section.Tw;
+                //wsCalcs.Cells[sRow + 4, sCol].Value = section.k;//TODO: Check this property and fix.
+
+                if (rngTarget.Rows.Count > 5)
+                {
+                    wsCalcs.Cells[sRow + 5, sCol].Value = section.A;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{nameof(SectionsService)} Following Error Encountered: " + ex.Message);
+            }
+            finally
+            {
+                _security.LockWorksheet(wsCalcs);
             }
         }
 
