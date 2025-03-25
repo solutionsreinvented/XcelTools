@@ -13,6 +13,7 @@ C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.
 C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.csproj.CopyComplete
 C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.dll
 C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools\obj\Debug\XcelTools.pdb
+C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.AssemblyReference.cache
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.dll
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\XcelTools.dll.manifest
@@ -54,7 +55,6 @@ C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.UI.Themes.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.UI.Themes.dll.config
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Sections.Geometry.pdb
 C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Sections.Geometry.dll.config
-C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.AssemblyReference.cache
 C:\Source\XcelTools\XcelTools\obj\Debug\Interop.OpenSTAADUI.dll
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.ResolveComReference.cache
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.Properties.Resources.resources
@@ -63,7 +63,6 @@ C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.CoreCompileInputs.cache
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.csproj.CopyComplete
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.dll
 C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.pdb
-C:\Source\XcelTools\XcelTools\obj\Debug\Controls\SplashControl.baml
-C:\Source\XcelTools\XcelTools\obj\Debug\Controls\SplashControl.g.cs
-C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools_MarkupCompile.cache
-C:\Source\XcelTools\XcelTools\obj\Debug\XcelTools.g.resources
+C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Licensing.Core.dll
+C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Licensing.Core.pdb
+C:\Source\XcelTools\XcelTools\bin\Debug\ReInvented.Licensing.Core.dll.config

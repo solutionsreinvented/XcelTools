@@ -13,6 +13,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows;
 using XcelTools.Services;
 using ReInvented.Sections.Domain.Interfaces;
+using XcelTools.Extensions;
 
 namespace XcelTools.Xtractor.Services
 {
@@ -134,7 +135,8 @@ namespace XcelTools.Xtractor.Services
                     wsPopulation.Cells[sRow + i, sCol].Value = profiles[i];
                 }
 
-                var listItems = "=" + wsPopulation.Name + "!" + wsPopulation.Range[wsPopulation.Cells[sRow, sCol], wsPopulation.Cells[profiles.Length, sCol]].Address;
+                //var listItems = "=" + wsPopulation.Name + "!" + wsPopulation.Range[wsPopulation.Cells[sRow, sCol], wsPopulation.Cells[profiles.Length, sCol]].Address;
+                var listItems = wsPopulation.RangeAddress(sRow, sCol, profiles.Length, sCol);
 
                 ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
                 rngTarget.Value2 = profiles.FirstOrDefault();

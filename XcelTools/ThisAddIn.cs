@@ -1,25 +1,33 @@
 ﻿using System;
+using System.Timers;
 
 using XcelTools.Licensing.Views;
 using XcelTools.Models;
-
-using XcelTools.XpLore.Views;
-using XcelTools.Xtractor.Models.Sections;
-using XcelTools.Xtractor.Services;
 
 namespace XcelTools
 {
     public partial class ThisAddIn
     {
         private ServicesProvider _serviceProvider;
+        private SplashScreen splashScreen;
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
-            SplashScreen splash = new SplashScreen();
-            splash.Show();
-            //XploreWindow xploreWindow = new XploreWindow();
+            
+            Timer timer = new Timer(TimeSpan.FromSeconds(1).TotalMilliseconds);
+            timer.Elapsed += OnTimerElapsed;
+            timer.Start();
+            splashScreen = new SplashScreen();
+            splashScreen.Show();
+            timer.Stop();
+        }
 
-            //xploreWindow.Show();
+        private void OnTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (splashScreen != null)
+            {
+                splashScreen.Close();
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, EventArgs e)

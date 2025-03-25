@@ -18,6 +18,7 @@ C:\Users\srini\source\repos\XcelToolsAddIn\XcelTools.Xplore\obj\Debug\Views\Xplo
 C:\Source\XcelTools\XcelTools.Xplore\bin\Debug\XcelTools.XpLore.exe.config
 C:\Source\XcelTools\XcelTools.Xplore\bin\Debug\XcelTools.XpLore.exe
 C:\Source\XcelTools\XcelTools.Xplore\bin\Debug\XcelTools.XpLore.pdb
+C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\XcelTools.Xplore.csproj.AssemblyReference.cache
 C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\Views\XploreWindow.baml
 C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\MainWindow.g.cs
 C:\Source\XcelTools\XcelTools.Xplore\obj\Debug\Views\XploreWindow.g.cs
