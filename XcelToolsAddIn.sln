@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XcelTools", "XcelTools\XcelTools.csproj", "{E50725BA-B0A4-4BEA-BC39-60A7DC7E8D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XcelTools.Xplore", "XcelTools.Xplore\XcelTools.Xplore.csproj", "{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XcelTools.UI", "XcelTools.UI\XcelTools.UI.csproj", "{5885FBCD-E7F9-4690-9188-E5F2C50907ED}"
 EndProject
 Global
@@ -25,14 +23,6 @@ Global
 		{E50725BA-B0A4-4BEA-BC39-60A7DC7E8D3E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E50725BA-B0A4-4BEA-BC39-60A7DC7E8D3E}.Release|x64.ActiveCfg = Release|x64
 		{E50725BA-B0A4-4BEA-BC39-60A7DC7E8D3E}.Release|x64.Build.0 = Release|x64
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Debug|x64.ActiveCfg = Debug|x64
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Debug|x64.Build.0 = Debug|x64
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Release|x64.ActiveCfg = Release|x64
-		{53E52ED2-D221-4A60-8BE9-B7A6A651C8F1}.Release|x64.Build.0 = Release|x64
 		{5885FBCD-E7F9-4690-9188-E5F2C50907ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5885FBCD-E7F9-4690-9188-E5F2C50907ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5885FBCD-E7F9-4690-9188-E5F2C50907ED}.Debug|x64.ActiveCfg = Debug|x64

@@ -17,7 +17,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
-using XcelTools.Licensing.Services;
 using XcelTools.Licensing.ViewModels;
 using XcelTools.Licensing.Views;
 using XcelTools.UI.Views;

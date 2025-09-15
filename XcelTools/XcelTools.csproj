@@ -290,10 +290,6 @@
       <Project>{5885fbcd-e7f9-4690-9188-e5f2c50907ed}</Project>
       <Name>XcelTools.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XcelTools.Xplore\XcelTools.Xplore.csproj">
-      <Project>{53e52ed2-d221-4a60-8be9-b7a6a651c8f1}</Project>
-      <Name>XcelTools.Xplore</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMFileReference Include="C:\Program Files\Bentley\Engineering\STAAD.Pro 2024\STAAD\StaadPro.dll">
