@@ -1,0 +1,179 @@
+﻿<UserControl
+    x:Class="XcelTools.UI.Controls.RegistrationControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shared="http://schemas.reinvented.com/shared"
+    xmlns:theme="http://schemas.reinvented.com/ui/themes"
+    
+    d:DesignHeight="320"
+    d:DesignWidth="600"
+    mc:Ignorable="d">
+
+    <Grid>
+
+        <Border Margin="5" CornerRadius="5">
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="5"
+                    Direction="0"
+                    Opacity="0.4"
+                    ShadowDepth="1"
+                    Color="Black" />
+            </Border.Effect>
+        </Border>
+
+        <Grid Margin="15" VerticalAlignment="Center">
+
+            <!--#region Grid Resources-->
+
+            <Grid.Resources>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="10,0" />
+                    <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=StaticForegroundBrush}" />
+                </Style>
+
+                <Style BasedOn="{StaticResource TextBoxStyle}" TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="10,5" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+
+            </Grid.Resources>
+
+            <!--#endregion-->
+
+            <!--#region Grid Definitions-->
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--#endregion-->
+
+            <!--#region Title Row-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Margin="0,5,0,20"
+                HorizontalAlignment="Center"
+                FontWeight="DemiBold"
+                Text="Register Your Copy of the Product" />
+            <!--#endregion-->
+
+
+            <!--#region License File Row-->
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="License File: " />
+            <Grid
+                Grid.Row="4"
+                Grid.Column="1"
+                Height="24"
+                Margin="10,0,10,5"
+                HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    Grid.Column="0"
+                    Height="24"
+                    Margin="0,0,3,0"
+                    Padding="5,3"
+                    VerticalContentAlignment="Center"
+                    IsEnabled="False"
+                    Text="{Binding LicenseFilePath}" />
+                <Button
+                    Grid.Column="1" Width="24"
+                    VerticalContentAlignment="Center" ToolTip="Browse for License File"
+                    Command="{Binding SelectLicenseFileCommand}"
+                    Content="..."
+                    FontSize="16" />
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Registration Key Row-->
+            <TextBlock
+                Grid.Row="5"
+                Grid.Column="0"
+                Text="Registration Key: " />
+
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="1"
+                Height="24"
+                Margin="10,0,10,5"
+                VerticalContentAlignment="Center"
+                Tag="Enter your product registration key"
+                Text="{Binding RegistrationKey, UpdateSourceTrigger=PropertyChanged}" />
+            <!--#endregion-->
+
+            <!--#region Buttons Group-->
+            <Grid
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="10,25,10,5">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+
+                <!--#region Register-->
+                <Button
+                    Grid.Column="0"
+                    Height="24"
+                    Margin="0,0,5,0"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding RegisterCommand}"
+                    Content="Register"
+                    IsDefault="True"
+                    IsEnabled="{Binding CanRegister}" />
+                <!--#endregion-->
+
+                <!--#region Generate License Input-->
+                <Button
+                    Grid.Column="1"
+                    Height="24"
+                    Margin="0,0,5,0"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding GenerateLicenseInputCommand}"
+                    Content="Generate License Input" />
+                <!--#endregion-->
+
+
+                <!--#region Cancel-->
+                <Button
+                    Grid.Column="3"
+                    Height="24"
+                    Margin="5,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding CancelCommand}"
+                    Content="Cancel" />
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

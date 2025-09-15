@@ -15,7 +15,7 @@ namespace XcelTools.Xtractor.Models.Sections
         #region Pipe Specific Properties
 
         public double OD;
-        public double ID; 
+        public double ID;
 
         #endregion
 
@@ -74,22 +74,22 @@ namespace XcelTools.Xtractor.Models.Sections
                 Mass = section.Mass,                                    /* kg/m */
                 MassFps = section.MassFps,                              /* pounds/foot */
                 Iy = section.Iy * Ten.RestTo(4),                        /* cm⁴ */
-                Wely = section.Wely * Ten.Cubed(),                      /* cm³ */
-                Wply = section.Wply * Ten.Cubed(),                      /* cm³ */
+                Wely = section.Wely * Ten.Cube(),                       /* cm³ */
+                Wply = section.Wply * Ten.Cube(),                       /* cm³ */
                 Ry = section.Ry * Ten,                                  /* cm³ */
-                Avy = section.Avy * Ten.Squared(),                      /* cm² */
+                Avy = section.Avy * Ten.Square(),                       /* cm² */
                 Iz = section.Iz * Ten.RestTo(4),                        /* cm⁴ */
-                Welz = section.Welz * Ten.Cubed(),                      /* cm³ */
-                Wplz = section.Wplz * Ten.Cubed(),                      /* cm³ */
+                Welz = section.Welz * Ten.Cube(),                       /* cm³ */
+                Wplz = section.Wplz * Ten.Cube(),                       /* cm³ */
                 Rz = section.Rz * Ten,                                  /* cm */
-                Avz = section.Avz * Ten.Squared(),                      /* cm² */
+                Avz = section.Avz * Ten.Square(),                       /* cm² */
                 It = section.It * Ten.RestTo(4),                        /* cm⁴ */
-                Iw = section.Iw * Ten.Cubed() * Ten.RestTo(6),          /* x10³ cm⁶ */
+                Iw = section.Iw * Ten.Cube() * Ten.RestTo(6),           /* x10³ cm⁶ */
                 Cy = section.Cy,                                        /* mm */
                 Cz = section.Cz,                                        /* mm */
                 Ey = section.Ey,                                        /* mm */
                 Ez = section.Ez,                                        /* mm */
-                A = section.A * Ten.Squared(),                          /* cm² */
+                A = section.A * Ten.Square(),                           /* cm² */
 
                 ALo = section.ALO,                                      /* m²/m */
                 AGo = section.AGO,                                      /* m²/t */
@@ -104,7 +104,6 @@ namespace XcelTools.Xtractor.Models.Sections
                 sp.OD = pipeSection.OD;                                 /* mm */
                 sp.ID = pipeSection.ID;                                 /* mm */
                 sp.Tw = pipeSection.Tw;                                 /* mm */
-                sp.A = pipeSection.A * Ten.Squared();                   /* cm² */
             }
             else
             {
@@ -114,7 +113,6 @@ namespace XcelTools.Xtractor.Models.Sections
                 //sp.Tf = CSng(.SelectSingleNode("tf").InnerText) ' mm
                 //sp.R1 = CSng(.SelectSingleNode("r1").InnerText) ' mm
                 //sp.R2 = CSng(.SelectSingleNode("r2").InnerText) ' mm
-                //sp.A = .SelectSingleNode("A").InnerText * (10 ^ 2) ' cm^2
                 //sp.Hi = CSng(.SelectSingleNode("hi").InnerText) ' mm
                 //sp.D = CSng(.SelectSingleNode("d").InnerText) ' mm
                 //sp.Alpha = CDbl(.SelectSingleNode("alpha").InnerText) ' Degrees
@@ -124,7 +122,7 @@ namespace XcelTools.Xtractor.Models.Sections
             }
 
             return sp;
-        } 
+        }
 
         #endregion
     }

@@ -66,43 +66,13 @@ namespace XcelTools.Xtractor.Services
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Types");
+                _ = MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Types");
             }
             finally
             {
                 _security.LockWorksheet(worksheet);
             }
         }
-
-        //[ComVisible(true)]
-        //public void PopulateSectionProfiles(string dbName, string shape, string classification, Excel.Range rngTarget, Excel.Range rngPopulation)
-        //{
-        //    Excel.Worksheet worksheet = rngTarget.Worksheet;
-        //    string wsName = worksheet.Name;
-        //    _security.UnlockWorksheet(worksheet);
-
-        //    try
-        //    {
-        //        Database database = _library.Databases.FirstOrDefault(db => db.Name == dbName);
-        //        SectionShape selectedShape = database.SectionShapes.FirstOrDefault(s => s.Shape == shape);
-        //        Classification selectedClassification = selectedShape.Classifications.FirstOrDefault(c => c.Category == classification);
-
-        //        string listItems = string.Join(",", selectedClassification.Sections.Select(s => s.Designation).ToArray());
-        //        ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
-
-        //        int sRow = rngTarget.Row;
-        //        int sCol = rngTarget.Column;
-        //        worksheet.Cells[sRow, sCol].Value = selectedClassification.Sections.FirstOrDefault().Designation;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Types");
-        //    }
-        //    finally
-        //    {
-        //        _security.LockWorksheet(worksheet);
-        //    }
-        //}
 
         [ComVisible(true)]
         public void PopulateSectionProfiles(string dbName, string shape, string classification, Excel.Range rngTarget, Excel.Range rngPopulation)
@@ -127,8 +97,8 @@ namespace XcelTools.Xtractor.Services
                 rngPopulation.Font.Name = "Tahoma";
                 rngPopulation.Font.Size = 8;
 
-                var sRow = rngPopulation.Row;
-                var sCol = rngPopulation.Column;
+                int sRow = rngPopulation.Row;
+                int sCol = rngPopulation.Column;
 
                 for (int i = 0; i < profiles.Length; i++)
                 {
@@ -136,14 +106,14 @@ namespace XcelTools.Xtractor.Services
                 }
 
                 //var listItems = "=" + wsPopulation.Name + "!" + wsPopulation.Range[wsPopulation.Cells[sRow, sCol], wsPopulation.Cells[profiles.Length, sCol]].Address;
-                var listItems = wsPopulation.RangeAddress(sRow, sCol, profiles.Length, sCol);
+                string listItems = wsPopulation.RangeAddress(sRow, sCol, profiles.Length, sCol);
 
                 ExcelCommonServices.PopulateListInACell(rngTarget, listItems);
                 rngTarget.Value2 = profiles.FirstOrDefault();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Profiles");
+                _ = MessageBox.Show($"An error encountered! Refer details below for further information. {Environment.NewLine}{ex.Message}", "Populate Section Profiles");
             }
             finally
             {
@@ -151,6 +121,7 @@ namespace XcelTools.Xtractor.Services
             }
         }
 
+        [ComVisible(true)]
         public void PopulateSectionData(string tableName, string sectionDesignation, Excel.Range rngTarget)
         {
             Excel.Worksheet wsCalcs = rngTarget.Worksheet;
@@ -177,7 +148,7 @@ namespace XcelTools.Xtractor.Services
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{nameof(SectionsService)} Following Error Encountered: " + ex.Message);
+                _ = MessageBox.Show($"{nameof(SectionsService)} Following Error Encountered: " + ex.Message);
             }
             finally
             {

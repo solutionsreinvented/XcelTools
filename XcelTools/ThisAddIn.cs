@@ -1,33 +1,40 @@
-﻿using System;
+﻿using Microsoft.Office.Core;
+using Microsoft.Office.Interop.Excel;
+
+using ReInvented.Shared.Services;
+
+using System;
 using System.Timers;
 
-using XcelTools.Licensing.Views;
 using XcelTools.Models;
+using XcelTools.UI.Models;
 
 namespace XcelTools
 {
     public partial class ThisAddIn
     {
+        #region Private Members
+
         private ServicesProvider _serviceProvider;
-        private SplashScreen splashScreen;
+        //private SplashScreen splashScreen;
+
+        #endregion
+
+        #region Private Helpers
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
-            
-            Timer timer = new Timer(TimeSpan.FromSeconds(1).TotalMilliseconds);
-            timer.Elapsed += OnTimerElapsed;
-            timer.Start();
-            splashScreen = new SplashScreen();
-            splashScreen.Show();
-            timer.Stop();
+            CultureService.SetCulture();
+
+            COMAddIn addIn = Globals.ThisAddIn.Application.COMAddIns.Item(nameof(XcelTools));
+
+            XcelToolsApplication application = new XcelToolsApplication(addIn);
+            application.Start();
         }
 
         private void OnTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            if (splashScreen != null)
-            {
-                splashScreen.Close();
-            }
+            
         }
 
         private void ThisAddIn_Shutdown(object sender, EventArgs e)
@@ -39,6 +46,8 @@ namespace XcelTools
         {
             return _serviceProvider ?? (_serviceProvider = new ServicesProvider());
         }
+
+        #endregion
 
         #region VSTO generated code
 

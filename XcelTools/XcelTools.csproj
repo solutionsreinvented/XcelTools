@@ -26,9 +26,10 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>XcelTools</RootNamespace>
     <AssemblyName>XcelTools</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
@@ -38,7 +39,6 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
     <ProductName>XcelTools</ProductName>
     <PublisherName />
     <SupportUrl />
@@ -50,6 +50,11 @@
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -127,30 +132,31 @@
     <Reference Include="Accessibility" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="ReInvented.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.DataAccess.dll</HintPath>
+    <Reference Include="ReInvented.DataAccess">
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="ReInvented.Licensing.Core">
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Licensing.Core.dll</HintPath>
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.Licensing.Core.dll</HintPath>
     </Reference>
     <Reference Include="ReInvented.Licensing.Security">
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Licensing.Security.dll</HintPath>
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.Licensing.Security.dll</HintPath>
     </Reference>
     <Reference Include="ReInvented.Sections.Domain">
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Sections.Domain.dll</HintPath>
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.Sections.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="ReInvented.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.Shared.dll</HintPath>
+    <Reference Include="ReInvented.Shared">
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.Shared.dll</HintPath>
     </Reference>
     <Reference Include="ReInvented.StaadPro.Interop">
-      <HintPath>E:\SolutionsReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\Debug\ReInvented.StaadPro.Interop.dll</HintPath>
+      <HintPath>..\..\..\..\04. ReInvented\MainProjects\SRi.XamlUIThickenerApp\ReInvented.ThickenerModelGenerator.UI\bin\x64\Debug\ReInvented.StaadPro.Interop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8.1\System.Xaml.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -204,6 +210,8 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Extensions\IRolledSectionExtensions.cs" />
+    <Compile Include="Extensions\RolledSectionOShapeExtensions.cs" />
     <Compile Include="Extensions\WorksheetExtensions.cs" />
     <Compile Include="Interfaces\IServicesProvider.cs" />
     <Compile Include="Models\ServicesProvider.cs" />
@@ -254,6 +262,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -274,11 +283,12 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="XcelTools_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XcelTools.Licensing\XcelTools.Licensing.csproj">
+    <ProjectReference Include="..\XcelTools.UI\XcelTools.UI.csproj">
       <Project>{5885fbcd-e7f9-4690-9188-e5f2c50907ed}</Project>
-      <Name>XcelTools.Licensing</Name>
+      <Name>XcelTools.UI</Name>
     </ProjectReference>
     <ProjectReference Include="..\XcelTools.Xplore\XcelTools.Xplore.csproj">
       <Project>{53e52ed2-d221-4a60-8be9-b7a6a651c8f1}</Project>
@@ -286,7 +296,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <COMFileReference Include="C:\Program Files\Bentley\Engineering\STAAD.Pro 2023\STAAD\StaadPro.dll">
+    <COMFileReference Include="C:\Program Files\Bentley\Engineering\STAAD.Pro 2024\STAAD\StaadPro.dll">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMFileReference>
   </ItemGroup>
@@ -301,7 +311,7 @@
     <ManifestKeyFile>XcelTools_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6CCE9746AB91D6996717D90A9087651BC891B753</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C5F617B5440F98BAB2AF57CDDF583126F353960C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -312,6 +322,23 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>VSTO40;DEBUG;TRACE</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>VSTO40;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

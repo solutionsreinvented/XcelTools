@@ -26,7 +26,7 @@ namespace XcelTools.Models
 
         public IOpenStaadWrapperCom GetOpenStaadWrapper()
         {
-            string filePath = FileServiceProvider.GetFilePathUsingOpenFileDialog(new ReInvented.DataAccess.Models.FileFilter("Staad Files", "std"));
+            string filePath = FileServiceProvider.GetFilePathUsingOpenFileDialog(new ReInvented.DataAccess.Models.FileFilter("Staad Files", FileExtensions.StaadApplication));
             OpenStaadWrapper wrapper = OpenStaadWrapperProvider.Get(filePath);
             return new OpenStaadWrapperCom(wrapper);
         }
